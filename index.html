@@ -218,9 +218,13 @@
                         const gameplayInfo = hero.gameplay_info || {};
                         const storyInfo = hero.story_info_list || {};
 
+                        // Debugging: Log the image URL
+                        console.log("Hero Image URL:", hero.hero_img);
+
                         let content = `
                             <div class="section">
                                 <h2>${storyInfo["Full name"] || "Unknown Hero"}</h2>
+                                <!-- Use a fallback image if the hero image is missing -->
                                 <img src="${hero.hero_img || 'https://via.placeholder.com/300'}" alt="${storyInfo["Full name"] || "Hero Image"}" onError="this.src='https://via.placeholder.com/300';">
                                 <p><strong>Role:</strong> ${hero.role}</p>
                                 <p><strong>Specialty:</strong> ${hero.specialty}</p>
