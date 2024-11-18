@@ -240,6 +240,8 @@
                     return response.json();
                 })
                 .then(data => {
+                    console.log("API Response:", JSON.stringify(data, null, 2)); // Log the API response
+
                     if (data && data.result) {
                         const hero = data.result;
                         const gameplayInfo = hero.gameplay_info || {};
@@ -294,6 +296,7 @@
             const now = new Date();
             const time = now.toLocaleTimeString();
             const date = now.toLocaleDateString();
+    
             document.getElementById("time").innerText = `Time: ${time}`;
             document.getElementById("date").innerText = `Date: ${date}`;
         }
